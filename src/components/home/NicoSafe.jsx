@@ -1,4 +1,3 @@
-
 "use client"
 import React, { useState } from 'react';
 
@@ -20,7 +19,8 @@ const NicoSafe = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white font-inter">
       {/* Navigation Bar */}
-      <nav className="absolute top-0 left-0 right-0 z-10 p-4 md:p-6 flex items-center justify-between">
+     <div className=''>
+       <nav className="absolute maxWidth top-0 left-0 right-0 z-10 p-4 md:p-6 flex items-center ">
         <div className="flex items-center space-x-2">
           {/* NikoSafe Logo and Text */}
           <img src="/nikosafe-logo.png" alt="" />
@@ -34,7 +34,7 @@ const NicoSafe = () => {
       </nav>
 
       {/* Hero Section */}
-      <header className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+      <header className="relative w-full h-screen flex items-center overflow-hidden">
         {/* Background Image/Video */}
         <div className="absolute inset-0">
           <img
@@ -45,12 +45,18 @@ const NicoSafe = () => {
               e.target.onerror = null;
               e.target.src = "https://placehold.co/1920x1080/1a202c/ffffff?text=Fallback+Image";
             }}
+            // Added the inline style for the background gradient
+            style={{
+              background: 'linear-gradient(90deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.12) 62.98%, rgba(0, 0, 0, 0.00) 100%), url("/nikosafe-banner.png") lightgray 50% / cover no-repeat',
+              backgroundSize: 'cover', // Ensure the background image covers the element
+              backgroundPosition: '50%', // Center the background image
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
         </div>
 
         {/* Content Overlay */}
-        <div className="relative z-10 text-center px-4 md:px-8 max-w-4xl mx-auto">
+        <div className="relative z-10 maxWidth px-4 md:px-8 ">
         
           <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-4">
             Drink Smarter. Live Better.
@@ -59,7 +65,7 @@ const NicoSafe = () => {
             A revolutionary app that blends social drinking, real-time tracking, and AI-powered
             insights – all while promoting responsible choices.
           </p>
-          <ul className="text-left text-gray-300 space-y-2 mb-12 max-w-md mx-auto">
+          <ul className="text-left text-gray-300 space-y-2 mb-12">
             <li className="flex items-start">
               <span className="text-blue-400 mr-2">&#x2022;</span> Order & pay for drinks via QR code
             </li>
@@ -80,7 +86,12 @@ const NicoSafe = () => {
       </header>
 
       {/* Keep Me Posted Section */}
-      <section className="bg-gray-900 py-16 px-4 md:px-8 text-center">
+      <section
+        className="py-16 px-4 md:px-8 text-center"
+        style={{
+          background: 'linear-gradient(180deg, #2A3D45 0%, #1F2C33 100%)',
+        }}
+      >
         <h2 className="text-2xl md:text-4xl font-bold mb-4">
           Be the First to Experience the Future of Drinking
         </h2>
@@ -91,18 +102,19 @@ const NicoSafe = () => {
           <input
             type="email"
             placeholder="Email"
-            className="w-full md:w-2/3 p-3 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full md:w-2/3 p-3  rounded-[27px]  bg-[#FFFFFF1A] text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             value={email}
             onChange={handleEmailChange}
           />
           <button
             onClick={handleKeepMePosted}
-            className="w-full md:w-auto px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300 ease-in-out font-semibold shadow-lg"
+            className="w-full md:w-auto px-6 py-3 rounded-[27px] border border-[#fff] hover:bg-blue-700 transition duration-300 ease-in-out font-semibold shadow-lg"
           >
             Keep Me Posted
           </button>
         </div>
       </section>
+     </div>
     </div>
   );
 };
