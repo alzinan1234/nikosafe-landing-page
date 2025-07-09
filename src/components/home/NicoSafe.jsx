@@ -48,7 +48,7 @@ const NicoSafe = () => {
             // Added the inline style for the background gradient
             style={{
               background: 'linear-gradient(90deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.12) 62.98%, rgba(0, 0, 0, 0.00) 100%), url("/nikosafe-banner.png") lightgray 50% / cover no-repeat',
-              backgroundSize: 'cover', // Ensure the background image covers the element
+              backgroundSize: 'cover', // Ensure the background image covers the elemente
               backgroundPosition: '50%', // Center the background image
             }}
           />
@@ -56,7 +56,7 @@ const NicoSafe = () => {
         </div>
 
         {/* Content Overlay */}
-        <div className="relative z-10 maxWidth px-4 md:px-8 ">
+        <div className="relative z-10 maxWidth px-4 md:px-8">
         
           <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-4">
             Drink Smarter. Live Better.
@@ -112,6 +112,8 @@ const NicoSafe = () => {
           >
             Keep Me Posted
           </button>
+
+          
         </div>
       </section>
      </div>
